@@ -17,10 +17,17 @@
   </head>
   <body>
     <div id="app">
+      <!--Title-->
       <h3 style="text-align: center;">QRcode Reader</h3>
-      <div class="btn-group justify-centent-center my-2" role="group">
-        <button v-for="(camera, i) in cameras" @click.stop="selectCamera(camera, i)" class="btn btn-secondary">{{ formatName(camera.name) }}</button>
+      <!--Camera-->
+      <div class="my-2 text-center">
+        <div class="btn-group" role="group">
+          <button v-for="(camera, i) in cameras" 
+            @click.stop="selectCamera(camera, i)" 
+            class="btn btn-secondary">{{ formatName(camera.name) }}</button>
+        </div>
       </div>
+      <!--video-->
       <div id="scanner-container" class="text-center" style="max-width: 600px;margin: auto;">
         <video id="preview" style="width:95%;height:auto;"></video>
       </div>
