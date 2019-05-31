@@ -1,0 +1,33 @@
+{
+  "name": "qrcode-reader",
+  "version": "1.0.0",
+  "description": "A simple qrcode reader",
+  "main": "index.js",
+  "scripts": {
+    "serve": "webpack-dev-server",
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnnywang1994/qrcode-reader.git"
+  },
+  "author": "johnnywang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnnywang1994/qrcode-reader/issues"
+  },
+  "homepage": "https://github.com/johnnywang1994/qrcode-reader#readme",
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
+    "instascan": "^1.0.0",
+    "push-dir": "^0.4.1",
+    "vue": "^2.6.10",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1"
+  }
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>QRcode Reader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./adapter.min.js"></script>
+    <script src="./instascan.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h3 style="text-align: center;">QRcode Reader</h3>
+      <ul>
+        <li v-for="camera in cameras" @click.stop="selectCamera(camera)">{{ formatName(camera.name) }}</li>
+      </ul>
+      <div id="scanner-container" style="max-width: 600px;margin: auto;">
+        <video id="preview" style="width:100%;height:auto;"></video>
+      </div>
+    </div>
+
+    <script src="./bundle.js" async defer></script>
+  </body>
+</html>
