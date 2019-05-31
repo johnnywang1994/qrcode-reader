@@ -5,8 +5,6 @@
   "main": "index.js",
   "scripts": {
     "serve": "webpack-dev-server",
-    "dev": "webpack --mode development --watch",
-    "build": "webpack --mode production",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "repository": {
