@@ -5,11 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>QRcode Reader</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="apple-mobile-web-app-title" content="QRCode Reader">
-    <meta name="application-name" content="QRcode Reader">
+    <meta name="apple-mobile-web-app-title" content="QR Reader">
+    <meta name="application-name" content="QR Reader">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="icon" href="./favicon.png">
     <link rel="apple-touch-icon" href="./favicon.png" title="QR Reader">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="./lib/adapter.min.js"></script>
     <script src="./lib/instascan.min.js"></script>
     <script src="./lib/vue.min.js"></script>
@@ -17,9 +18,9 @@
   <body>
     <div id="app">
       <h3 style="text-align: center;">QRcode Reader</h3>
-      <ul>
-        <li v-for="camera in cameras" @click.stop="selectCamera(camera)">{{ formatName(camera.name) }}</li>
-      </ul>
+      <div class="btn-group" role="group">
+        <button v-for="camera in cameras" @click.stop="selectCamera(camera)" class="btn btn-secondary">{{ formatName(camera.name) }}</button>
+      </div>
       <div id="scanner-container" style="max-width: 600px;margin: auto;">
         <video id="preview" style="width:100%;height:auto;"></video>
       </div>
