@@ -18,7 +18,7 @@
   <body>
     <div id="app">
       <h3 style="text-align: center;">QRcode Reader</h3>
-      <div class="btn-group text-center my-2" role="group">
+      <div class="btn-group justify-centent-center my-2" role="group">
         <button v-for="(camera, i) in cameras" @click.stop="selectCamera(camera, i)" class="btn btn-secondary">{{ formatName(camera.name) }}</button>
       </div>
       <div id="scanner-container" class="text-center" style="max-width: 600px;margin: auto;">
