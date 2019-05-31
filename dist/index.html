@@ -18,11 +18,11 @@
   <body>
     <div id="app">
       <h3 style="text-align: center;">QRcode Reader</h3>
-      <div class="btn-group mx-auto my-2" role="group">
+      <div class="btn-group d-inline-block mx-auto my-2" role="group">
         <button v-for="(camera, i) in cameras" @click.stop="selectCamera(camera, i)" class="btn btn-secondary">{{ formatName(camera.name) }}</button>
       </div>
       <div id="scanner-container" style="max-width: 600px;margin: auto;">
-        <video id="preview" style="width:100%;height:auto;"></video>
+        <video id="preview" style="width:95%;height:auto;margin:auto;"></video>
       </div>
     </div>
 
