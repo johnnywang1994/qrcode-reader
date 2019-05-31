@@ -35,7 +35,7 @@ const app = new Vue({
 
     //開始偵聽掃描事件，若有偵聽到印出內容。
     vm.scanner.addListener('scan', function (content) {
-      alert('畫面即將跳轉至/n'+content)
+      alert('畫面即將跳轉至\n'+content)
       location.href = content
     })
 
