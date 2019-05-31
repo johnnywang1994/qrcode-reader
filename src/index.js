@@ -1,6 +1,6 @@
 const Vue = require('vue');
 
-new Vue({
+const app = new Vue({
   el: '#app',
   data: {
     scanner: null,
