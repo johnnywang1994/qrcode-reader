@@ -6,7 +6,8 @@ const app = new Vue({
   data: {
     scanner: null,
     cameras: [],
-    now_camera: 1
+    now_camera: 0,
+    side: 1
   },
   mounted() {
     var vm = this
@@ -20,16 +21,15 @@ const app = new Vue({
     formatName: function (name) {
       return name || '(unknown)'
     },
-    selectCamera: function (camera) {
+    selectCamera: function (camera, index) {
       var vm = this
-      // if (vm.now_camera == 1) {
-      //   vm.now_camera = -1;
-      //   vm.scanner.video.style.transform = `scaleX(${vm.now_camera})`
-      // }
-      vm.now_camera == 1 ? vm.now_camera = -1 : vm.now_camera = 1
-      vm.activeCameraId = camera.id
-      vm.scanner.start(camera)
-      vm.scanner.video.style.transform = `scaleX(${vm.now_camera})`
+      if (vm.now_camera !== index) {
+        vm.now_camera = index;
+        vm.side == 1 ? vm.side = -1 : vm.side = 1;
+        vm.scanner.start(camera);
+        vm.reverseCamera(vm.side);
+      }
+      // vm.activeCameraId = camera.id
     },
     // 開啟一個新的掃描
     // 宣告變數scanner，在html<video>標籤id為preview的地方開啟相機預覽。
@@ -40,9 +40,9 @@ const app = new Vue({
       });
     },
     // 調整鏡頭左右顛倒
-    reverseCamera: function() {
+    reverseCamera: function(side) {
       const vm = this;
-      vm.scanner.video.style.transform = `scaleX(${vm.now_camera})`;
+      vm.scanner.video.style.transform = `scaleX(${side})`;
     },
     // IOS 必須加上playsinline
     fixIOS: function() {
