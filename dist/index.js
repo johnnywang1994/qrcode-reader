@@ -1,3 +1,6 @@
+// 此處使用的instascan非官方版本，
+// 由https://github.com/schmich/instascan/issues/182 的quocthai95 網友所提供
+// github 連結：https://github.com/quocthai95/instascan.git
 const app = new Vue({
   el: '#app',
   data: {
